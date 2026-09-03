@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "m4teo.rclone-drive",
+  "name": "Rclone Drive Monitor",
+  "version": "1.0.0",
+  "author": "m4teo",
+  "license": "MIT",
+  "description": "Bar widget to monitor and control an rclone cloud storage mount (Google Drive and others).",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Rclone Drive",
+    "description": "Watch and control an rclone mount (Google Drive and others): mount, unmount, and view free space from the bar.",
+    "category": "Files",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "remoteName": "gdrive",
+      "mountPoint": "~/GoogleDrive",
+      "pollIntervalSec": 15,
+      "notificationsEnabled": true
+    },
+    "schema": [
+      {
+        "key": "remoteName",
+        "type": "string",
+        "label": "Remote name",
+        "description": "Name of the rclone remote to monitor (as configured in 'rclone config').",
+        "defaultValue": "gdrive"
+      },
+      {
+        "key": "mountPoint",
+        "type": "string",
+        "label": "Mount point",
+        "description": "Local path where the remote is mounted.",
+        "defaultValue": "~/GoogleDrive"
+      },
+      {
+        "key": "pollIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 5,
+        "max": 300,
+        "step": 5,
+        "defaultValue": 15
+      },
+      {
+        "key": "notificationsEnabled",
+        "type": "boolean",
+        "label": "Notifications",
+        "description": "Show desktop notifications when the mount goes up or down.",
+        "defaultValue": true
+      }
+    ]
+  }
+}
