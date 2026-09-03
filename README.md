@@ -2,6 +2,8 @@
 
 A bar widget for Omarchy Quattro that lists a configured [rclone](https://rclone.org/) remote, selectively downloads files, and synchronizes selected items with Google Drive. It does not create a FUSE mount: selected files are stored in `~/DriveSync`.
 
+![Rclone Drive Sync preview](preview.png)
+
 ## Features
 
 - Lists files and folders from an rclone remote in the Omarchy bar.
@@ -26,16 +28,10 @@ rclone version
 
 ## Install
 
-Install and enable the plugin with Omarchy. Replace `<repository-url>` with this plugin's public Git repository URL:
+Install and enable the plugin with Omarchy:
 
 ```sh
-omarchy plugin add <repository-url> --enable
-```
-
-For example, after publishing the repository to GitHub:
-
-```sh
-omarchy plugin add https://github.com/<owner>/<repository>.git --enable
+omarchy plugin add https://github.com/archlatam/m4teo-google-drive.git --enable
 ```
 
 Omarchy clones the plugin, discovers it, enables it, and adds the bar widget. Confirm its state with:
